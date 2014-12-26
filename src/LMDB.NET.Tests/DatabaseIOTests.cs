@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading;
 using NUnit.Framework;
 
@@ -18,7 +19,9 @@ namespace LMDB.Tests
         public DatabaseIOTests()
         {
             var location = typeof(EnvironmentTests).Assembly.Location;
-            _path = Path.Combine(Path.GetDirectoryName(location), "TestDb");
+            _path = Path.Combine(
+                Path.GetDirectoryName(location), 
+                "TestDb" + Guid.NewGuid().ToString());
         }
 
         [SetUp]
@@ -27,6 +30,7 @@ namespace LMDB.Tests
             Directory.CreateDirectory(_path);
 
             _env = new LightningEnvironment(_path, EnvironmentOpenFlags.None);
+            _env.MaxDatabases = 2;
             _env.Open();
 
             _txn = _env.BeginTransaction();
@@ -146,6 +150,28 @@ namespace LMDB.Tests
 
             Assert.IsTrue(exists);
             Assert.AreEqual(value, persistedValue);
+        }
+
+        [Test]
+        [TestCase(null)] 
+        [TestCase("test")]
+        public void CanCommitTransactionToNamedDatabase(string dbName)
+        {
+            using (var db = _txn.OpenDatabase(dbName, DatabaseOpenFlags.Create))
+            {
+                _txn.Put(db, "key1", "value");
+
+                _txn.Commit();
+            }
+
+            using (var txn2 = _env.BeginTransaction())
+            {
+                using (var db = txn2.OpenDatabase(dbName))
+                {
+                    var value = txn2.Get<string, string>(db, "key1");
+                    Assert.AreEqual("value", value);
+                }
+            }
         }
     }
 }

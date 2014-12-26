@@ -1,9 +1,7 @@
-﻿using System;
-using System.IO;
-using System.Threading;
+﻿using System.IO;
 using NUnit.Framework;
 
-namespace LMDB.Tests
+namespace LightningDB.Tests
 {
     [TestFixture]
     public class DatabaseTests
@@ -15,9 +13,7 @@ namespace LMDB.Tests
         public DatabaseTests()
         {
             var location = typeof(EnvironmentTests).Assembly.Location;
-            _path = Path.Combine(
-                Path.GetDirectoryName(location), 
-                "TestDb" + Guid.NewGuid().ToString());
+            _path = Path.Combine(Path.GetDirectoryName(location), "TestDb");
         }
 
         [SetUp]
@@ -32,7 +28,7 @@ namespace LMDB.Tests
         public void Cleanup()
         {
             _env.Close();
-            Thread.Sleep(50);
+
             if (Directory.Exists(_path))
                 Directory.Delete(_path, true);
         }

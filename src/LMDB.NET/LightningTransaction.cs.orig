@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Text;
-using LMDB.Factories;
+<<<<<<< HEAD:src/LMDB.NET/LightningTransaction.cs
 using LMDB.Native;
+=======
+using LightningDB.Factories;
+using LightningDB.Native;
+>>>>>>> 0.8.5.51145:src/LightningDB/LightningTransaction.cs
 
 namespace LMDB
 {

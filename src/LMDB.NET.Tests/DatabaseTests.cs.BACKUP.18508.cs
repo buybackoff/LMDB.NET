@@ -1,6 +1,10 @@
+<<<<<<< HEAD:src/LMDB.NET.Tests/DatabaseTests.cs
+﻿using System.IO;
+using System.Threading;
+=======
 ﻿using System;
 using System.IO;
-using System.Threading;
+>>>>>>> 0.8.5.51145:src/LightningDB.Tests/DatabaseTests.cs
 using NUnit.Framework;
 
 namespace LMDB.Tests

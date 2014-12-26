@@ -1,9 +1,12 @@
-﻿namespace LMDB {
-    struct DatabaseHandleCacheEntry {
+﻿namespace LMDB.Factories
+{
+    struct DatabaseHandleCacheEntry
+    {
         private uint _handle;
         private DatabaseOpenFlags _flags;
 
-        public DatabaseHandleCacheEntry(uint handle, DatabaseOpenFlags flags) {
+        public DatabaseHandleCacheEntry(uint handle, DatabaseOpenFlags flags)
+        {
             _handle = handle;
             _flags = flags;
         }

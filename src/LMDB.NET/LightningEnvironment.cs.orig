@@ -2,9 +2,14 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
+<<<<<<< HEAD:src/LMDB.NET/LightningEnvironment.cs
 using LMDB.Converters;
-using LMDB.Factories;
 using LMDB.Native;
+=======
+using LightningDB.Converters;
+using LightningDB.Factories;
+using LightningDB.Native;
+>>>>>>> 0.8.5.51145:src/LightningDB/LightningEnvironment.cs
 
 namespace LMDB
 {

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -17,7 +18,9 @@ namespace LMDB.Tests
         public CursorTests()
         {
             var location = typeof(EnvironmentTests).Assembly.Location;
-            _path = Path.Combine(Path.GetDirectoryName(location), "TestDb");
+            _path = Path.Combine(
+                Path.GetDirectoryName(location), 
+                "TestDb" + Guid.NewGuid().ToString());
         }
 
         [SetUp]
