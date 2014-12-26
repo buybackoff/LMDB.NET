@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using NUnit.Framework;
 
 namespace LMDB.Tests
@@ -35,8 +36,9 @@ namespace LMDB.Tests
         public void Cleanup()
         {
             _txn.Commit();
+            _db.Close();
             _env.Close();
-
+            Thread.Sleep(50);
             if (Directory.Exists(_path))
                 Directory.Delete(_path, true);
         }

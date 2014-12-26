@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Threading;
 using NUnit.Framework;
 
 namespace LMDB.Tests
@@ -32,6 +33,7 @@ namespace LMDB.Tests
 
             try
             {
+                Thread.Sleep(50);
                 Directory.Delete(_path, true);
             }
             catch { }

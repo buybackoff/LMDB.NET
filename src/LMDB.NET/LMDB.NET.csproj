@@ -85,6 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Async\WaitHandleExtensions.cs" />
     <Compile Include="Collections\CursorGenericEnumerator.cs" />
     <Compile Include="Collections\CursorGenericEnumerable.cs" />
     <Compile Include="Collections\CursorEnumerable.cs" />
@@ -150,10 +151,12 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lmdb32.dll">
+    <Content Include="..\..\bin\Win32\Release\lmdb32.dll">
+      <Link>lmdb32.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="lmdb64.dll">
+    <Content Include="..\..\bin\x64\Release\lmdb64.dll">
+      <Link>lmdb64.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

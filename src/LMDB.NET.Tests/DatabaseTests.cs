@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Threading;
 using NUnit.Framework;
 
 namespace LMDB.Tests
@@ -28,7 +29,7 @@ namespace LMDB.Tests
         public void Cleanup()
         {
             _env.Close();
-
+            Thread.Sleep(50);
             if (Directory.Exists(_path))
                 Directory.Delete(_path, true);
         }
