@@ -16,7 +16,7 @@ namespace LMDB
             /// <summary>
             /// Default MapSize for new environments
             /// </summary>
-            public const long LibDefaultMapSize = 10485760;
+            public const long LibDefaultMapSize = 1048576;
 
             /// <summary>
             /// Default MaxReaders for new environments

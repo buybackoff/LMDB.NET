@@ -68,7 +68,16 @@ namespace LMDB.Native
         private static extern IntPtr mdb_strerror(int err);
 
         [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int mdb_stat(IntPtr txn, uint dbi, out MDBStat stat);
+
+        [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
         private static extern int mdb_env_copy(IntPtr env, string path);
+
+        [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int mdb_env_info (IntPtr env, out MDBEnvInfo stat);
+
+        [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int mdb_env_stat(IntPtr env, out MDBStat stat);
 
         [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
         private static extern int mdb_env_sync(IntPtr env, bool force);
@@ -207,9 +216,24 @@ namespace LMDB.Native
             return Native32BitLibraryFacade.mdb_strerror(err);
         }
 
+        int INativeLibraryFacade.mdb_stat(IntPtr txn, uint dbi, out MDBStat stat)
+        {
+        return Native32BitLibraryFacade.mdb_stat(txn, dbi, out stat);
+        }
+
         int INativeLibraryFacade.mdb_env_copy(IntPtr env, string path)
         {
             return Native32BitLibraryFacade.mdb_env_copy(env, path);
+        }
+
+        int INativeLibraryFacade.mdb_env_info (IntPtr env, out MDBEnvInfo stat)
+        {
+            return Native32BitLibraryFacade.mdb_env_info(env, out stat);
+        }
+
+        int INativeLibraryFacade.mdb_env_stat (IntPtr env, out MDBStat stat)
+        {
+            return Native32BitLibraryFacade.mdb_env_stat(env, out stat);
         }
 
         int INativeLibraryFacade.mdb_env_sync(IntPtr env, bool force)
@@ -329,7 +353,16 @@ namespace LMDB.Native
         private static extern IntPtr mdb_strerror(int err);
 
         [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int mdb_stat(IntPtr txn, uint dbi, out MDBStat stat);
+
+        [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
         private static extern int mdb_env_copy(IntPtr env, string path);
+
+        [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int mdb_env_info (IntPtr env, out MDBEnvInfo stat);
+
+        [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int mdb_env_stat(IntPtr env, out MDBStat stat);
 
         [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
         private static extern int mdb_env_sync(IntPtr env, bool force);
@@ -456,9 +489,24 @@ namespace LMDB.Native
             return Native64BitLibraryFacade.mdb_strerror(err);
         }
 
+        int INativeLibraryFacade.mdb_stat(IntPtr txn, uint dbi, out MDBStat stat)
+        {
+        return Native64BitLibraryFacade.mdb_stat(txn, dbi, out stat);
+        }
+
         int INativeLibraryFacade.mdb_env_copy(IntPtr env, string path)
         {
             return Native64BitLibraryFacade.mdb_env_copy(env, path);
+        }
+
+        int INativeLibraryFacade.mdb_env_info (IntPtr env, out MDBEnvInfo stat)
+        {
+            return Native64BitLibraryFacade.mdb_env_info(env, out stat);
+        }
+
+        int INativeLibraryFacade.mdb_env_stat (IntPtr env, out MDBStat stat)
+        {
+            return Native64BitLibraryFacade.mdb_env_stat(env, out stat);
         }
 
         int INativeLibraryFacade.mdb_env_sync(IntPtr env, bool force)
@@ -578,7 +626,16 @@ namespace LMDB.Native
         private static extern IntPtr mdb_strerror(int err);
 
         [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int mdb_stat(IntPtr txn, uint dbi, out MDBStat stat);
+
+        [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
         private static extern int mdb_env_copy(IntPtr env, string path);
+
+        [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int mdb_env_info (IntPtr env, out MDBEnvInfo stat);
+
+        [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int mdb_env_stat(IntPtr env, out MDBStat stat);
 
         [DllImport(LibraryName, CallingConvention = CallingConvention.Cdecl)]
         private static extern int mdb_env_sync(IntPtr env, bool force);
@@ -717,9 +774,24 @@ namespace LMDB.Native
             return FallbackLibraryFacade.mdb_strerror(err);
         }
 
+        int INativeLibraryFacade.mdb_stat(IntPtr txn, uint dbi, out MDBStat stat)
+        {
+        return FallbackLibraryFacade.mdb_stat(txn, dbi, out stat);
+        }
+
         int INativeLibraryFacade.mdb_env_copy(IntPtr env, string path)
         {
             return FallbackLibraryFacade.mdb_env_copy(env, path);
+        }
+
+        int INativeLibraryFacade.mdb_env_info (IntPtr env, out MDBEnvInfo stat)
+        {
+            return FallbackLibraryFacade.mdb_env_info(env, out stat);
+        }
+
+        int INativeLibraryFacade.mdb_env_stat (IntPtr env, out MDBStat stat)
+        {
+            return FallbackLibraryFacade.mdb_env_stat(env, out stat);
         }
 
         int INativeLibraryFacade.mdb_env_sync(IntPtr env, bool force)
