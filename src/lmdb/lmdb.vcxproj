@@ -95,6 +95,7 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>build_compability_includes\stubs;origin\libraries\liblmdb;build_compability_includes\real;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/FS</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -111,6 +112,7 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>build_compability_includes\stubs;origin\libraries\liblmdb;build_compability_includes\real;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/FS</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -129,6 +131,7 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>build_compability_includes\stubs;origin\libraries\liblmdb;build_compability_includes\real;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/FS</AdditionalOptions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -149,6 +152,7 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>build_compability_includes\stubs;origin\libraries\liblmdb;build_compability_includes\real;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/FS</AdditionalOptions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

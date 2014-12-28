@@ -97,6 +97,7 @@
     <Compile Include="Factories\DatabaseManager.cs" />
     <Compile Include="Factories\TransactionManager.cs" />
     <Compile Include="GetByOperation.cs" />
+    <Compile Include="IClosingEventSource.cs" />
     <Compile Include="LightningCursorExtensions.cs" />
     <Compile Include="LightningCursorMoveExtensions.cs">
       <AutoGen>True</AutoGen>
@@ -133,6 +134,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NativeLibraryFacades.tt</DependentUpon>
     </Compile>
+    <Compile Include="Native\StatStructure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PutOptions.cs" />
     <Compile Include="TransactionBeginFlags.cs" />
